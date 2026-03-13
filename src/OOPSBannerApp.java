@@ -1,20 +1,61 @@
 public class OOPSBannerApp {
-    public static void main(String[] args){
 
-        String[] banner = new String[7];
-
-        banner[0]=(String.join(" ", " *** ", "***** ","*****", "***** "));
-        banner[1]=(String.join(" ", "*   *", "*   *", "*   *", "*    "));
-        banner[2]=(String.join(" ", "*   *", "*   *", "*   *", "*    "));
-        banner[3]=(String.join(" ", "*   *", "*****", "*****", "***** "));
-        banner[4]=(String.join(" ", "*   *", "*    ", "*     ", "    *"));
-        banner[5]=(String.join(" ", "*   *", "*    ", "*     ", "    *"));
-        banner[6]=(String.join(" ", " *** ", "*    ", "*     ", "**** "));
-        
-        for (String line : banner) {
-            System.out.println(line);
-        }
+    // Method for letter O
+    public static String[] getOPattern() {
+        return new String[]{
+            " *** ",
+            "*   *",
+            "*   *",
+            "*   *",
+            "*   *",
+            "*   *",
+            " *** "
+        };
     }
 
-        
+    // Method for letter P
+    public static String[] getPPattern() {
+        return new String[]{
+            "**** ",
+            "*   *",
+            "*   *",
+            "**** ",
+            "*    ",
+            "*    ",
+            "*    "
+        };
+    }
+
+    // Method for letter S
+    public static String[] getSPattern() {
+        return new String[]{
+            " ****",
+            "*    ",
+            "*    ",
+            " *** ",
+            "    *",
+            "    *",
+            "**** "
+        };
+    }
+
+    public static void main(String[] args) {
+
+        String[] o = getOPattern();
+        String[] p = getPPattern();
+        String[] s = getSPattern();
+
+        // Loop through 7 rows
+        for(int i = 0; i < 7; i++) {
+
+            System.out.println(
+                String.join(" ",
+                    o[i],   // O
+                    o[i],   // O again
+                    p[i],   // P
+                    s[i]    // S
+                )
+            );
+        }
+    }
 }
